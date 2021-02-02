@@ -1,10 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 var port = 3000;
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post('/', (req, res) => {
+    res.send("Thanks for post");
 });
 
 app.listen(port, (req, res) => {
