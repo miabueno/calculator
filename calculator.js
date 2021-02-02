@@ -1,5 +1,7 @@
-const express = require('express');
-const app = express();
+const app = require('express')();
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 var port = 3000;
 
@@ -8,6 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', (req, res) => {
+    console.log(req.body);
     res.send("Thanks for post");
 });
 
